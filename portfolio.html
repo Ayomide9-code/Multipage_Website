@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1><a href="index.html">Aalita</a></h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="contact-btn">Contact Me</button>
+    </header>
+
+    <main class="main-content">
+        <section class="portfolio">
+            <h1>See My Portfolio</h1>
+            <p>
+                Dive into my world of fashion, beauty, and creativity, where passion meets professionalism
+            </p>
+            <div class="portfolio-categories">
+                <button data-category="all">All</button>
+                <button data-category="modeling">Modeling</button>
+                <button data-category="fashion">Fashion</button>
+                <button data-category="ads">Ads</button>
+                <button data-category="awards">Awards</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Image Cards -->
+                <div class="card" data-category="modeling">
+                    <img src="assets/img/Screenshot_20241026_175153_Gallery.jpg" alt="Modeling">
+                    <div class="card-overlay">
+                        <h3>Modeling</h3>
+                        <p>
+                            Experience the art of high-fashion modeling with my expert poses and expressions.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" data-category="fashion">
+                    <img src="assets/img/Screenshot_20241026_175045_Gallery.jpg" alt="Fashion">
+                    <div class="card-overlay">
+                        <h3>Fashion</h3>
+                        <p>
+                            Stay stylish with my latest fashion trends, from runway to editorial spreads.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" data-category="ads">
+                    <img src="assets/img/IMG-20241001-WA0305.jpg" alt="Ads">
+                    <div class="card-overlay">
+                        <h3>Ads</h3>
+                        <p>
+                            Boost your brand's visibility with my captivating commercial modeling services.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" data-category="awards">
+                    <img src="assets/img/IMG-20241026-WA0061.jpg" alt="Awards">
+                    <div class="card-overlay">
+                        <h3>Awards</h3>
+                        <p>
+                            Celebrate my achievements in the fashion industry with these prestigious awards.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" data-category="awards">
+                    <img src="assets/img/IMG-20241026-WA0060.jpg" alt="Awards">
+                    <div class="card-overlay">
+                        <h3>Awards</h3>
+                        <p>
+                            Celebrate my achievements in the fashion industry with these prestigious awards.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" data-category="awards">
+                    <img src="assets/img/IMG-20241026-WA0071.jpg" alt="Awards">
+                    <div class="card-overlay">
+                        <h3>Awards</h3>
+                        <p>
+                            Celebrate my achievements in the fashion industry with these prestigious awards.
+                        </p>
+                    </div>
+                </div>
+                <!-- Repeat for other cards -->
+                <!-- Add more cards as needed to fill 4 rows -->
+            </div>
+        </section>
+    </main>
+    <script src="/assets/js/portfolio.js"></script>
+</body>
+</html>

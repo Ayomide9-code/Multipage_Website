@@ -1,0 +1,287 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo a{
+    font-size: 24px;
+    font-weight: bold;
+    color: #f4a523;
+    text-decoration: none;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+
+.navbar nav ul li a:hover {
+    color: black;
+    background-color: transparent;
+    border-bottom: 1px solid #f4a523;
+    border-top: 1px solid #f4a523;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+
+
+.contact-button {
+    padding: 10px 15px;
+    background-color: #f4a523;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color:transparent;
+    color: black;
+    border: 1px solid #f4a523;
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #f4a523;
+}
+
+.services p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 20px;
+}
+
+/* .service-item {
+    background-color: white;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s,
+    border-color o.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border-color: #f4a523;
+} */
+
+.service-item {
+    position: relative;
+    background-color: white;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden; /* Ensures animation stays within the card */
+    transition: transform 0.3s, box-shadow 0.3s ease; /* Smooth animations */
+    z-index: 0; /* Keep the pseudo-elements inside the card's context */
+}
+
+.service-item:hover {
+    transform: scale(1.03); /* Slight zoom effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+/* Animated border effect */
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #f4a523; /* Border color */
+    border-radius: 8px; /* Matches the card's corners */
+    opacity: 0; /* Initially invisible */
+    z-index: -1; /* Keeps the border below the card content */
+    transform: scale(0); /* Shrinks the border */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Smooth animation */
+}
+
+/* Hover triggers the border animation */
+.service-item:hover::before {
+    opacity: 1; /* Makes the border visible */
+    transform: scale(1); /* Expands to full size */
+}
+
+/* Icon styling */
+#icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #f4a523;
+    transition: color 0.3s ease; /* Smooth icon color change */
+}
+
+.service-item:hover #icon {
+    color: #333; /* Changes icon color */
+}
+
+
+
+
+/* .service-item .icon {
+    font-size: 40px;
+    color: #f4a523;
+    margin-bottom: 10px;
+} */
+
+#icon{
+    font-size: 40px;
+    margin-bottom:10px;
+    color: #f4a523;
+}
+
+.service-item h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* General Marquee Container Styling */
+.marquee-container {
+    background-color: #222;
+    padding: 15px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: inline-flex;
+    animation: scroll-left 12s linear infinite;
+}
+
+/* Reverse marquee */
+.marquee-right .marquee-track {
+    animation: scroll-right 12s linear infinite;
+}
+
+/* Pause effect in animation */
+@keyframes scroll-left {
+    0%, 20% {
+        transform: translateX(0); /* Pause */
+    }
+    80%, 100% {
+        transform: translateX(-100%); /* Scroll left */
+    }
+}
+
+@keyframes scroll-right {
+    0%, 20% {
+        transform: translateX(0); /* Pause */
+    }
+    80%, 100% {
+        transform: translateX(100%); /* Scroll right */
+    }
+}
+
+/* Card Styling */
+.card {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 20px; /* Space between images */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hamburger Menu */
+/* .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links a{
+        display: none;
+    }
+
+    .contact-button {
+        display: flex;
+        margin-top: 0;
+    }
+
+    .services h1 {
+        font-size: 24px;
+    }
+
+    .services-grid {
+        display: inline-block;
+    }
+
+
+    
+    
+}
